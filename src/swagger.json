@@ -3,7 +3,10 @@
     "info":{
         "title": "Node.JS CRUD",
         "description": "Documentação da API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "contact": {
+            "email": "jujucg15@gmail.com"
+        }
     },
     "servers":[
     {
@@ -15,68 +18,30 @@
         "/users": {
             "post": {
                 "summary": "CreateUser",
-                "description": "In this endpoint should be possible create users",
-                "tags":[
-                    "users"
-                ],
+                "description": "vdgvddf",
+                "tags": ["users"],
                 "requestBody": {
                     "content": {
                         "application/json":{
                             "schema": {
-                                "$ref":"#/components/schemas/User"
-                            },
-                            "examples":{
-                                "user":{
-                                    "value":{
-                                        "id": 0,
-                                        "name": "string"
-                                    }
-                                }
+                                "$ref": "#/components/schemas/User"
                             }
                         }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "This response should be executed when the request is made and endpoint create users"
                     }
                 }
-            },
-            "get":{
-                "summary": "ListUser",
-                "description": "In this endpoint should be possible list users",
-                "tags":[
-                    "users"
-                ],
-                "responses": {
-                    "200": {
-                      "description": "This response should be executed when the request is made and endpoint list users",
-                      "content":{
-                        "application/json":{
-                            "schema": {
-                                "type": "object",
-                                "example": {
-                                    "count": 0,
-                                    "user":[]
-                                }
-                            }
-                        }
-                      }
-                    }
-                } 
             }
         },
-        "components": {
-            "schemas": {
-                "User": {
-                    "type": "object",
-                    "properties":{
-                        "name":{
-                            "type": "string"
-                        }
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties":{
+                    "name":{
+                        "type": "string"
                     }
                 }
             }
         }
-   }
+    }
+}
 }
