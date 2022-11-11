@@ -2,7 +2,7 @@ import ListUserService from "./ListUser.service";
 
 let listUser: ListUserService;
 
-describe('List user', () => {
+describe('List users', () => {
     beforeAll(async () => {
         listUser = new ListUserService();
     });

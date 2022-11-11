@@ -9,8 +9,8 @@ describe('Update user', () => {
 
     it('should be able to update a users', async () => {
         const user = await updateUser.execute({
-            id: 2,
-            name: 'Juliana'
+            id: 4,
+            name: 'João'
         });
     
     expect(user).toHaveProperty('id');
