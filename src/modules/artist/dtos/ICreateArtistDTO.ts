@@ -1,4 +1,4 @@
-export interface ICreateUserDTO {
+export interface ICreateArtistDTO {
     id?: number;
     name: string;
 }
