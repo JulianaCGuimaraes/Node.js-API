@@ -3,7 +3,7 @@ The API in Node.JS will be stored in this repository, which was an activity pass
 
 - API in Node.JS that implements all the operations of a basic CRUD.
 
-#####Install dependencies
+#### Install dependencies
 
 Navigate into the project directory and install the npm dependencies with the following command:
 
