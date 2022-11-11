@@ -1,6 +1,6 @@
 {
     "openapi": "3.0.0",
-    "info":{
+    "info": {
         "title": "Node.JS CRUD",
         "description": "Documentação da API",
         "version": "1.0.0",
@@ -8,40 +8,310 @@
             "email": "jujucg15@gmail.com"
         }
     },
-    "servers":[
-    {
-        "url":"http://localhost:3000",
-        "description": "API dev"
-    }
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "API dev"
+        }
     ],
     "paths": {
         "/users": {
             "post": {
                 "summary": "CreateUser",
-                "description": "vdgvddf",
-                "tags": ["users"],
+                "description": "In this endpoint should be possible create users",
+                "tags": [
+                    "users"
+                ],
                 "requestBody": {
                     "content": {
-                        "application/json":{
+                        "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "user": {
+                                    "value": {
+                                        "name": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint create users"
+                    }
+                }
+            },
+            "get":{
+                "summary": "ListUser",
+                "description": "In this endpoint should be possible list users",
+                "tags": [
+                    "users"
+                ],
+                "responses":{
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint list users",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "example":{
+                                        "count": 0,
+                                        "user":[]
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         },
+        "/users/{id}":{
+            "delete":{
+                "summary": "DeleteUser",
+                "description": "In this endpoint should be possible delete users",
+                "tags":[
+                    "users"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/User"
+                            },
+                            "examples":{
+                                "user":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint delete users"
+                    }
+                }
+            }
+        },
+        "/users/name/{id}":{
+            "put":{               
+                "summary": "UpdateUser",
+                "description": "In this endpoint should be possible update users",
+                "tags":[
+                    "users"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/User"
+                            },
+                            "examples":{
+                                "user":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint update users"
+                    }
+                }
+            }
+        },
+        "/songs": {
+            "post":{
+                "summary": "CreateSong",
+                "description": "In this endpoint should be possible create songs",
+                "tags": [
+                    "songs"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Song"
+                            },
+                            "examples": {
+                                "song": {
+                                    "value": {
+                                        "name": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint create songs"
+                    }
+                }
+            },
+            "get":{
+                "summary": "ListSong",
+                "description": "In this endpoint should be possible list songs",
+                "tags": [
+                    "songs"
+                ],
+                "responses":{
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint list songs",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "example":{
+                                        "count": 0,
+                                        "song":[]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/songs/{id}":{
+            "delete":{
+                "summary": "DeleteSong",
+                "description": "In this endpoint should be possible delete songs",
+                "tags":[
+                    "songs"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Song"
+                            },
+                            "examples":{
+                                "song":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint delete songs"
+                    }
+                }
+            }
+        },
+        "/songs/songName/{id}":{
+            "put":{               
+                "summary": "UpdateSong",
+                "description": "In this endpoint should be possible update songs",
+                "tags":[
+                    "songs"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Song"
+                            },
+                            "examples":{
+                                "song":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint update songs"
+                    }
+                }
+            }
+        }
+    },
     "components": {
         "schemas": {
             "User": {
                 "type": "object",
-                "properties":{
-                    "name":{
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "name": {
                         "type": "string"
+                    }
+                }
+            },
+            "Song":{
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "albumId": {
+                        "type": "number"
+                    },
+                    "artistId": {
+                        "type": "number"
                     }
                 }
             }
         }
     }
-}
 }
