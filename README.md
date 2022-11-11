@@ -11,7 +11,7 @@ Navigate into the project directory and install the npm dependencies with the fo
 npm install
 `````
 
-#####Important commands
+#### Important commands
 `````
 - Started prisma studio => npx prisma studio
 - Started project => npm run dev
@@ -21,7 +21,7 @@ npm install
 ``````
 
 
-#####Technology Used
+#### Technology Used
 ````
 - Typescript
 - Prisma
