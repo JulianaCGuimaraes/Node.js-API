@@ -13,6 +13,6 @@ const updateUserController = new UpdateUserController();
 userRoutes.post('/', createUserController.handle);
 userRoutes.get('/', listUserController.handle);
 userRoutes.delete('/:id', deleteUserController.handle);
-userRoutes.put('/name/:id', updateUserController.handle);
+userRoutes.put('/userName/:id', updateUserController.handle);
 
 export default userRoutes;
