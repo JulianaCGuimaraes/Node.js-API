@@ -18,6 +18,11 @@ class UpdatePlaylistService {
                     update: {
                        id: Number(id)
                     }
+                },
+                song: {
+                    update: {
+                       id: Number(id)
+                    }
                 }
             }
         });
