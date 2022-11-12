@@ -108,7 +108,7 @@
                 }
             }
         },
-        "/users/name/{id}":{
+        "/users/userName/{id}":{
             "put":{               
                 "summary": "UpdateUser",
                 "description": "In this endpoint should be possible update users",
@@ -280,6 +280,139 @@
                     }
                 }
             }
+        },
+        "/artists":{
+            "post": {
+                "summary": "CreateArtist",
+                "description": "In this endpoint should be possible create artists",
+                "tags": [
+                    "artists"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Artist"
+                            },
+                            "examples": {
+                                "artist": {
+                                    "value": {
+                                        "name": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint create artists"
+                    }
+                }
+            },
+            "get":{
+                "summary": "ListArtist",
+                "description": "In this endpoint should be possible list artists",
+                "tags": [
+                    "artists"
+                ],
+                "responses":{
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint list artists",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "example":{
+                                        "count": 0,
+                                        "artist":[]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/artists/{id}":{
+            "delete":{
+                "summary": "DeleteArtist",
+                "description": "In this endpoint should be possible delete artists",
+                "tags":[
+                    "artists"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Artist"
+                            },
+                            "examples":{
+                                "artist":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint delete artists"
+                    }
+                }
+            }
+        },
+        "/artists/artistName/{id}":{
+            "put":{               
+                "summary": "UpdateArtist",
+                "description": "In this endpoint should be possible update artists",
+                "tags":[
+                    "artists"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Artist"
+                            },
+                            "examples":{
+                                "artist":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint update artists"
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -309,6 +442,17 @@
                     },
                     "artistId": {
                         "type": "number"
+                    }
+                }
+            },
+            "Artist": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
                     }
                 }
             }
