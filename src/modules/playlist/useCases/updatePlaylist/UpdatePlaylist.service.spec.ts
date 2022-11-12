@@ -13,6 +13,9 @@ describe('Update playlist', () => {
             name: 'Sinara',
             user:{
                 id: 1
+            },
+            song: {
+                id: 1
             }
         });
     
