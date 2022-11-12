@@ -546,6 +546,139 @@
                     }
                 }
             }
+        },
+        "/playlists": {
+            "post": {
+                "summary": "CreatePlaylist",
+                "description": "In this endpoint should be possible create playlists",
+                "tags": [
+                    "playlists"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Playlist"
+                            },
+                            "examples": {
+                                "playlist": {
+                                    "value": {
+                                        "name": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint create playlists"
+                    }
+                }
+            },
+            "get": {
+                "summary": "ListPlaylist",
+                "description": "In this endpoint should be possible list playlists",
+                "tags": [
+                    "playlists"
+                ],
+                "responses":{
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint list playlists",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "example":{
+                                        "count": 0,
+                                        "playlist":[]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/playlists/{id}":{
+            "delete":{
+                "summary": "DeletePlaylist",
+                "description": "In this endpoint should be possible delete playlists",
+                "tags":[
+                    "playlists"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Playlist"
+                            },
+                            "examples":{
+                                "playlist":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint delete playlists"
+                    }
+                }
+            }
+        },
+        "/playlists/playlistName/{id}":{
+            "put":{               
+                "summary": "UpdatePlaylist",
+                "description": "In this endpoint should be possible update playlists",
+                "tags":[
+                    "playlists"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Playlist"
+                            },
+                            "examples":{
+                                "playlist":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint update playlists"
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -597,6 +730,20 @@
                     },
                     "name": {
                         "type": "string"
+                    }
+                }
+            },
+            "Playlist": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "userId": {
+                        "type": "number"
                     }
                 }
             }
