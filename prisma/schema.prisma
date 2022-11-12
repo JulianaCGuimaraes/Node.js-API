@@ -26,8 +26,9 @@ model Song {
 model Artist {
   id        Int   @id @default(autoincrement())
   name      String
+  albumId   Int?
+  album     Album?        @relation(fields: [albumId], references: [id])
   songs     Song[]
-  albums    Album[]
 }
 
 model Album {
@@ -41,6 +42,7 @@ model Playlist {
   id        Int   @id @default(autoincrement())
   name      String
   userId    Int?
+  songId    Int?
+  song      Song?    @relation(fields: [songId], references: [id])
   user      User?    @relation(fields: [userId], references: [id])
-  songs     Song[]
 }
