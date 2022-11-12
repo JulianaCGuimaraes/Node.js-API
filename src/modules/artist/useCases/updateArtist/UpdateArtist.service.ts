@@ -5,13 +5,18 @@ import { IUpdateArtistDTO } from "../../dtos/IUpdateArtistDTO";
 
 class UpdateArtistService {
     // eslint-disable-next-line class-methods-use-this
-    async execute ({id, name}: IUpdateArtistDTO): Promise<Artist> {
+    async execute ({id, name }: IUpdateArtistDTO): Promise<Artist> {
         const artist = await prisma.artist.update({ 
             where: {
                 id: Number(id),
             },
             data: {
-                name: String(name)
+                name: String(name),
+                album: {
+                    update: {
+                       id: Number(id)
+                    }
+                }
             }
         });
 
