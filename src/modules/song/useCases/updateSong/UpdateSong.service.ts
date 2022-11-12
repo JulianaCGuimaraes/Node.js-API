@@ -6,9 +6,7 @@ class UpdateSongService {
     // eslint-disable-next-line class-methods-use-this
     async execute ({ 
         id, 
-        name,
-        album,
-        artist 
+        name
     }: IUpdateSongDTO): Promise<Song> {
         const song = await prisma.song.update({ 
             where: {
