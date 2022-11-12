@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import CreateUserController from '../modules/users/useCases/createUser/CreateUser.controller';
-import ListUserController from '../modules/users/useCases/listUser/ListUser.controller';
-import DeleteUserController from '../modules/users/useCases/deleteUsers/DeleteUser.controller';
-import UpdateUserController from '../modules/users/useCases/updateUser/UpdateUser.controller';
+import CreateUserController from '../modules/user/useCases/createUser/CreateUser.controller';
+import ListUserController from '../modules/user/useCases/listUser/ListUser.controller';
+import DeleteUserController from '../modules/user/useCases/deleteUsers/DeleteUser.controller';
+import UpdateUserController from '../modules/user/useCases/updateUser/UpdateUser.controller';
 
 const userRoutes = Router();
 const createUserController = new CreateUserController();
