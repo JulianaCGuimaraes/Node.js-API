@@ -9,8 +9,11 @@ describe('Create song', () => {
 
     it('should be able to create a new song', async () => {
         const playlist = await createPlaylist.execute({
-            name: 'Juliana',
+            name: 'BTS Songs',
             user: {
+                id: 1
+            },
+            song:{
                 id: 1
             }
         });
