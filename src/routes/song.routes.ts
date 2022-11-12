@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import CreateSongController from '../modules/songs/useCases/createSong/CreateSong.controller';
-import DeleteSongController from '../modules/songs/useCases/deleteSong/DeleteSong.controller';
-import ListSongController from '../modules/songs/useCases/listSong/ListSong.controller';
-import UpdateSongController from '../modules/songs/useCases/updateSong/UpdateSong.controller';
+import CreateSongController from '../modules/song/useCases/createSong/CreateSong.controller';
+import DeleteSongController from '../modules/song/useCases/deleteSong/DeleteSong.controller';
+import ListSongController from '../modules/song/useCases/listSong/ListSong.controller';
+import UpdateSongController from '../modules/song/useCases/updateSong/UpdateSong.controller';
 
 const songRoutes = Router();
 const createSongController = new CreateSongController();

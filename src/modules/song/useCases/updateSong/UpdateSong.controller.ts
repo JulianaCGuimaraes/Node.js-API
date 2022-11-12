@@ -1,7 +1,6 @@
 import {Request, Response} from 'express';
 import UpdateSongService from './UpdateSong.service';
 
-
 class UpdateSongController {
     // eslint-disable-next-line class-methods-use-this
     async handle(req: Request, res: Response){

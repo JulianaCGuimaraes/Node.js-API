@@ -413,6 +413,272 @@
                     }
                 }
             }
+        },
+        "/albums": {
+            "post": {
+                "summary": "CreateAlbum",
+                "description": "In this endpoint should be possible create albums",
+                "tags": [
+                    "albums"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Album"
+                            },
+                            "examples": {
+                                "album": {
+                                    "value": {
+                                        "name": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint create albums"
+                    }
+                }
+            },
+            "get":{
+                "summary": "ListAlbum",
+                "description": "In this endpoint should be possible list albums",
+                "tags": [
+                    "albums"
+                ],
+                "responses":{
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint list albums",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "example":{
+                                        "count": 0,
+                                        "album":[]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/{id}":{
+            "delete":{
+                "summary": "DeleteAlbum",
+                "description": "In this endpoint should be possible delete albums",
+                "tags":[
+                    "albums"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Album"
+                            },
+                            "examples":{
+                                "album":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint delete albums"
+                    }
+                }
+            }
+        },
+        "/albums/albumName/{id}":{
+            "put":{               
+                "summary": "UpdateAlbum",
+                "description": "In this endpoint should be possible update albums",
+                "tags":[
+                    "albums"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Album"
+                            },
+                            "examples":{
+                                "album":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint update albums"
+                    }
+                }
+            }
+        },
+        "/playlists": {
+            "post": {
+                "summary": "CreatePlaylist",
+                "description": "In this endpoint should be possible create playlists",
+                "tags": [
+                    "playlists"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Playlist"
+                            },
+                            "examples": {
+                                "playlist": {
+                                    "value": {
+                                        "name": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint create playlists"
+                    }
+                }
+            },
+            "get": {
+                "summary": "ListPlaylist",
+                "description": "In this endpoint should be possible list playlists",
+                "tags": [
+                    "playlists"
+                ],
+                "responses":{
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint list playlists",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "example":{
+                                        "count": 0,
+                                        "playlist":[]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/playlists/{id}":{
+            "delete":{
+                "summary": "DeletePlaylist",
+                "description": "In this endpoint should be possible delete playlists",
+                "tags":[
+                    "playlists"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Playlist"
+                            },
+                            "examples":{
+                                "playlist":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint delete playlists"
+                    }
+                }
+            }
+        },
+        "/playlists/playlistName/{id}":{
+            "put":{               
+                "summary": "UpdatePlaylist",
+                "description": "In this endpoint should be possible update playlists",
+                "tags":[
+                    "playlists"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "schema":{
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Playlist"
+                            },
+                            "examples":{
+                                "playlist":{
+                                    "value":{
+                                        "name":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "This response should be executed when the request is made and endpoint update playlists"
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -453,6 +719,31 @@
                     },
                     "name": {
                         "type": "string"
+                    }
+                }
+            },
+            "Album": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Playlist": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "userId": {
+                        "type": "number"
                     }
                 }
             }
