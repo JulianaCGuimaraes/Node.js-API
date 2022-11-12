@@ -4,10 +4,15 @@ import { ICreateArtistDTO } from "../../dtos/ICreateArtistDTO";
 
 class CreateArtistService {
     // eslint-disable-next-line class-methods-use-this
-    async execute ({name}: ICreateArtistDTO): Promise<Artist> {
+    async execute ({name, album }: ICreateArtistDTO): Promise<Artist> {
         const artist = await prisma.artist.create({ 
             data: {
-                name
+                name, 
+                album:{
+                    connect: {
+                        id: Number(album.id)
+                    }
+                }
             }
         });
 
