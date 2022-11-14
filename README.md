@@ -3,7 +3,7 @@ The API in Node.JS will be stored in this repository, which was an activity pass
 
 - API in Node.JS that implements all the operations of a basic CRUD.
 
-#####Install dependencies
+##### Install dependencies
 
 Navigate into the project directory and install the npm dependencies with the following command:
 
@@ -11,7 +11,7 @@ Navigate into the project directory and install the npm dependencies with the fo
 npm install
 `````
 
-#####Important commands
+##### Important commands
 `````
 - Started prisma studio => npx prisma studio
 - Started project => npm run dev
@@ -21,7 +21,7 @@ npm install
 ``````
 
 
-#####Technology Used
+##### Technology Used
 ````
 - Typescript
 - Prisma
