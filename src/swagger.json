@@ -717,6 +717,9 @@
                     "id": {
                         "type": "number"
                     },
+                    "albumId": {
+                        "type": "number"
+                    },
                     "name": {
                         "type": "string"
                     }
@@ -743,6 +746,9 @@
                         "type": "string"
                     },
                     "userId": {
+                        "type": "number"
+                    },
+                    "songId": {
                         "type": "number"
                     }
                 }
