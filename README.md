@@ -27,5 +27,6 @@ npm install
 - Prisma
 - Node.JS
 - Postgresql
-- Swagger`
+- Swagger
+- Postman
 ````
