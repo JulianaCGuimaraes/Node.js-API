@@ -10,7 +10,10 @@ describe('Update artist', () => {
     it('should be able to update a artists', async () => {
         const artist = await updateArtist.execute({
             id: 4,
-            name: 'João'
+            name: 'João',
+            album:{
+                id: 1
+            }
         });
     
     expect(artist).toHaveProperty('id');

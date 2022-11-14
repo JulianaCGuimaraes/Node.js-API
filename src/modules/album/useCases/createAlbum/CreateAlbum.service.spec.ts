@@ -9,8 +9,8 @@ describe('Create album', () => {
 
     it('should be able to create a new album', async () => {
         const album = await createAlbum.execute({
-            id:1,
-            name: 'SinaraAlbum'
+            id: 1,
+            name: 'Wings'
         });
     
     expect(album).toHaveProperty('id');

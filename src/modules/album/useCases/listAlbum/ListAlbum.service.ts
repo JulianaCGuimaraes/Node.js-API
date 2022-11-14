@@ -1,9 +1,9 @@
-import { Artist } from '@prisma/client';
+import { Album } from '@prisma/client';
 import { prisma } from '../../../../infra/prisma/client'
 
 class ListAlbumService{
     // eslint-disable-next-line class-methods-use-this
-    async execute(): Promise<Artist[]>{
+    async execute(): Promise<Album[]>{
         const listAlbum = await prisma.album.findMany();
         return listAlbum;
     }

@@ -9,7 +9,7 @@ describe('Create song', () => {
 
     it('should be able to create a new song', async () => {
         const song = await createSong.execute({
-            name: 'Juliana',
+            name: 'Intro : Boy Meets Evil',
             album: {
                 id: 1
             },
